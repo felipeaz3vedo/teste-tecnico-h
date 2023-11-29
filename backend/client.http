@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:5000
+@authTokent = {{{{login.response.body.accessToken}}}
+
+# @name register_account
+
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "Felipe de Azevedo Pessoa",
+  "email": "felipe@email.com",
+  "password": "felipe123"
+}
+
+###
+
+# @name login
+
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "felipe@email.com",
+  "password": "felipe123"
+}
+
+
