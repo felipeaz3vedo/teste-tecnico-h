@@ -1,11 +1,9 @@
-import {
-  BadRequestException,
-  Injectable,
-  NotFoundException
-} from '@nestjs/common';
-import { PrismaService } from 'src/libs/prisma/prisma.service';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { compare } from 'bcrypt';
+
 import { CreateTokenService } from './create-token.service';
+import { PrismaService } from 'src/libs/prisma/prisma.service';
+
 import { LoginDTO } from '../DTOs/login.dto';
 
 @Injectable()
@@ -21,11 +19,11 @@ export class LoginService {
     });
 
     if (!user) {
-      throw new NotFoundException('Resource not found');
+      throw new BadRequestException('Invalid email or/and passoword');
     }
 
     if (!(await compare(password, user.password))) {
-      throw new BadRequestException('Incorrect credentials');
+      throw new BadRequestException('Invalid email or/and passoword');
     }
 
     const { accessToken } = this.createTokenService.execute(user);

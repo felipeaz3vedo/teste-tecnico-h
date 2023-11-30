@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+
 import { JwtService } from '@nestjs/jwt';
 import { CreateTokenDTO } from '../DTOs/create-token.dto';
 
