@@ -1,9 +1,11 @@
 import {
   Controller,
   FileTypeValidator,
+  Get,
   MaxFileSizeValidator,
   ParseFilePipe,
   Post,
+  Query,
   UploadedFile,
   UseGuards,
   UseInterceptors
@@ -13,12 +15,22 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { UploadTransactionsService } from './services/upload-transactions.service';
 
 import { AuthGuard } from 'src/guards/auth.guard';
+import { GetAllTransactionsService } from './services/get-all-transactions.service';
 
-@Controller('transaction')
+@Controller('transactions')
 export class TransactionController {
   constructor(
-    private readonly uploadTransactionsService: UploadTransactionsService
+    private readonly uploadTransactionsService: UploadTransactionsService,
+    private readonly getAllTransactionsService: GetAllTransactionsService
   ) {}
+
+  @Get()
+  @UseGuards(AuthGuard)
+  async getAll(@Query('seller') seller?: string) {
+    const transactions = this.getAllTransactionsService.execute(seller);
+
+    return transactions;
+  }
 
   @Post('/upload')
   @UseGuards(AuthGuard)

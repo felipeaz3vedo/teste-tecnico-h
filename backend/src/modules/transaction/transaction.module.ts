@@ -5,6 +5,7 @@ import { UserModule } from '../user/user.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { UploadTransactionsService } from './services/upload-transactions.service';
 import { PrismaService } from 'src/libs/prisma/prisma.service';
+import { GetAllTransactionsService } from './services/get-all-transactions.service';
 
 @Module({
   imports: [
@@ -15,6 +16,10 @@ import { PrismaService } from 'src/libs/prisma/prisma.service';
     })
   ],
   controllers: [TransactionController],
-  providers: [UploadTransactionsService, PrismaService]
+  providers: [
+    GetAllTransactionsService,
+    UploadTransactionsService,
+    PrismaService
+  ]
 })
 export class TransactionModule {}
