@@ -31,8 +31,8 @@ export const TransactionsTable = ({ transactions }: TransactionProps) => {
             <th>Data</th>
             <th>Nome do produto</th>
             <th>Valor da transação</th>
-            <th>Vendedor/Afiliado</th>
-            <th>Saldo do Vendedor/Afiliado</th>
+            <th>Vendedor</th>
+            <th>Saldo do Vendedor</th>
           </tr>
         </thead>
 
