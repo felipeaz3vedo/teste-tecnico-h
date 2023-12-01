@@ -24,7 +24,7 @@ export class UploadTransactionsService {
     });
 
     const transactionData: Transaction[] = [];
-    console.log(__dirname);
+
     try {
       for await (const line of rl) {
         const isNotEmptyLine = line.trim() !== '';

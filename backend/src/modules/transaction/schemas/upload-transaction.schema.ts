@@ -9,7 +9,7 @@ export const uploadTransactionSchema = z.object({
     },
     {
       message:
-        'Invalid txt format. TrtransactionType must contain exactly one numerci character between 1 and 4'
+        'Invalid txt format. TrtransactionTypeId must contain exactly one numercic character between 1 and 4'
     }
   ),
   date: z.string().refine((dateTime) => dateFormat.test(dateTime), {

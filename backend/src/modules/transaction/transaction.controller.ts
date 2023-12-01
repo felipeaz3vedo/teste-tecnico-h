@@ -2,6 +2,7 @@ import {
   Controller,
   FileTypeValidator,
   Get,
+  HttpCode,
   MaxFileSizeValidator,
   ParseFilePipe,
   Post,
@@ -33,6 +34,7 @@ export class TransactionController {
   }
 
   @Post('/upload')
+  @HttpCode(201)
   @UseGuards(AuthGuard)
   @UseInterceptors(FileInterceptor('file'))
   async upload(
