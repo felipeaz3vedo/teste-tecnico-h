@@ -35,6 +35,8 @@ export const SigninForm = () => {
 
       handleSignin(token);
 
+      toast.success('Cadastro realizado com sucesso');
+
       navigate('/');
     },
     onError: (error) => {

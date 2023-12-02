@@ -8,11 +8,11 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   app.enableCors({
-    origin: ['http://localhost:5173'],
+    origin: [`http://localhost:${process.env.FRONTEND_PORT}`],
     credentials: true
   });
 
-  await app.listen(process.env.PORT || 5000);
+  await app.listen(process.env.BACKEND_PORT || 3000);
 }
 
 bootstrap();

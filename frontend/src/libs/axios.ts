@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const baseURL = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: `http://localhost:${import.meta.env.VITE_BACKEND_PORT}`
 });
 
 interface RegisterData {
