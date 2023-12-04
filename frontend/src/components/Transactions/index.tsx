@@ -80,7 +80,7 @@ export const Transactions = () => {
             value={seller}
             onChange={(e) => setSeller(e.target.value)}
             type="search"
-            placeholder="Buscar por afiliado/vendedor"
+            placeholder="Buscar por vendedor"
           />
         </S.SearchContainer>
 
