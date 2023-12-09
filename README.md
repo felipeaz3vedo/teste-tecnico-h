@@ -1,4 +1,4 @@
-# Challenge by [Hubbi](https://app.hubbi.app/)
+# TESTE TÉCNICO H
 
 <img src="https://github.com/felipeaz3vedo/teste-tecnico-hubbi/assets/107761789/a03b02c9-b7d2-497e-a4d4-0a53655e7ac4" width="100%">
 
